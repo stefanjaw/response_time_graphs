@@ -1,6 +1,7 @@
 # This code
 graphs/
 rrd_files/
+ping_log.*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
