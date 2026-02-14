@@ -2,6 +2,7 @@
 graphs/
 rrd_files/
 ping_log.*
+configuration.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
