@@ -12,6 +12,7 @@ GRAPH_DIR = config.GRAPH_DIR # = './graphs'
 STEP = config.STEP # = 1  # default 60 seconds between samples
 HEARTBEAT = config.HEARTBEAT # = 60  # default 120 max interval between updates in seconds
 SAMPLE_POINTS = config.SAMPLE_POINTS # = 1440 # 1440 sample points = 60 mins x 24 hrs
+GRAPH_DELTA_TIME_SECS = config.GRAPH_DELTA_TIME_SECS  # delta_time_secs = 3600  # 24*60*60 = last 24 hours
 
 # Ensure directories exist
 os.makedirs(RRD_DIR, exist_ok=True)
@@ -64,7 +65,7 @@ def generate_graph(ip):
     rrd_path = os.path.join(RRD_DIR, f'{ip}.rrd')
     graph_path = os.path.join(GRAPH_DIR, f'{ip}.png')
     end_time = int(time.time())
-    delta_time_secs = 3600  # 24*60*60 = last 24 hours
+    delta_time_secs = GRAPH_DELTA_TIME_SECS
     start_time = end_time - delta_time_secs
     
     rrdtool.graph(
