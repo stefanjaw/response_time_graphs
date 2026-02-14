@@ -1,0 +1,5 @@
+using python and rrdtools
+create a code to do ping to multiple IP addresses,
+and save the data to a log file,
+and to rrdtool db,
+and generate per IP address the graph of each rrdtool
