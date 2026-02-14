@@ -2,15 +2,16 @@ import os
 import subprocess
 import time
 import rrdtool
+import configuration as config
 
 # Configuration
-IP_ADDRESSES = ['8.8.8.8', '1.1.1.1', 'google.com']
-LOG_FILE = 'ping_log.txt'
-RRD_DIR = './rrd_files'
-GRAPH_DIR = './graphs'
-STEP = 1  # default 60 seconds between samples
-HEARTBEAT = 60  # default 120 max interval between updates in seconds
-SAMPLE_POINTS = 1440 # 1440 sample points = 60 mins x 24 hrs
+IP_ADDRESSES = config.IP_ADDRESSES #  ['8.8.8.8', '1.1.1.1', 'google.com']
+LOG_FILE = config.LOG_FILE #  = 'ping_log.txt'
+RRD_DIR = config.RRD_DIR # = './rrd_files'
+GRAPH_DIR = config.GRAPH_DIR # = './graphs'
+STEP = config.STEP # = 1  # default 60 seconds between samples
+HEARTBEAT = config.HEARTBEAT # = 60  # default 120 max interval between updates in seconds
+SAMPLE_POINTS = config.SAMPLE_POINTS # = 1440 # 1440 sample points = 60 mins x 24 hrs
 
 # Ensure directories exist
 os.makedirs(RRD_DIR, exist_ok=True)
