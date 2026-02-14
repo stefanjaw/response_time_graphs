@@ -15,17 +15,29 @@
 <p id="timestampDisplay"></p>
 
 <div id="imagesContainer">
-  <!-- Replace these with your actual PNG filenames -->
-  <img src="./graphs/1.1.1.1.png" alt="Graph 1" width="600" />
-  <img src="./graphs/8.8.8.8.png" alt="Graph 2" width="600" />
-  <img src="./graphs/google.com.png" alt="Graph 3" width="600" />
-  <!-- Add more images as needed -->
 </div>
+
+<!-- Configuration File, with Variables -->
+<script src="configuration.js"></script>
 
 <script>
 let intervalId = null;
 
+function generateImages() {
+  const container = document.getElementById('imagesContainer');
+  container.innerHTML = ''; // Clear previous images
+  for (let i = 0; i < pngFiles.length; i++) {
+    console.log(pngFiles[i]);
+    const img = document.createElement('img');
+    img.src = pngFiles[i];
+    img.alt = 'Graph ' + (i + 1);
+    img.width = 600; // or whatever size you prefer
+    container.appendChild(img);
+  }
+}
+
 function refreshPage() {
+  console.log("Refreshing");
   // Reload the page
   location.reload();
 }
@@ -49,6 +61,7 @@ function setRefresh() {
 
 // Set default refresh interval on page load
 window.onload = function() {
+  generateImages();
   setRefresh();
 };
 </script>
