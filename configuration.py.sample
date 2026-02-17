@@ -6,4 +6,9 @@ GRAPH_DIR = './graphs'
 STEP = 1  # default 60 seconds between samples
 HEARTBEAT = 60  # default 120 max interval between updates in seconds
 SAMPLE_POINTS = 1440 # 1440 sample points = 60 mins x 24 hrs
+# SAMPLE_POINTS amount of points in the graph
+# Example 120 values, for 120 seconds
+# In 1 hour, 3600 sample points
+# The graph can have a bigger timespan,
+# but only 3600 sample points will be shown
 GRAPH_DELTA_TIME_SECS = 3600  # 24*60*60 = last 24 hours
